@@ -71,7 +71,27 @@ class _ChatScreenState extends State<ChatScreen>
         backgroundColor: Colors.pink[100],
       ),
       body: Center(
-        child: Text('${animationController.value.toInt()}%'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text('${animationController.value.toInt()}%'),
+            Padding(
+              padding:
+                  const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                        borderSide: BorderSide(color: Colors.blue)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                        borderSide: BorderSide(color: Colors.blue))),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
